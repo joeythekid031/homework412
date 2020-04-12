@@ -106,13 +106,17 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script>
-      // var nine = $("#9am").val().trim();
+
+      // For soe reason only my 9am input field works even though they are all the exact same maybe a new row&col to seperate hours??? I think i need to change to dynamically loading each hour
+      // I think once things are loaded through js my display color function will work as well 
+      // I am submitting as is and will work on dynamic loading of the page but have hit a wall in getting this version to function 
+      
       $(".btn").on("click", function (event) {
         event.preventDefault
         var userinput = $("#"+this.value).val().trim();
         var time = this.value;
         var savedItem = time, userinput;
-       alert(userinput);
+      //  alert(userinput);
       //  console.log(nine)
         localStorage.setItem("agenda",savedItem);
         display()
