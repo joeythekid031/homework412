@@ -17,7 +17,7 @@
   <header class="jumbotron">
     <h1 class="display-3">Work Day Scheduler</h1>
     <p class="lead">A simple calendar app for scheduling your work day</p>
-    <p id="currentDay" class="lead"></p>
+    <p id="currentdate" class="lead"></p>
   </header>
   <div class="container">
     <!-- Timeblocks go here -->
@@ -110,19 +110,23 @@
     // For soe reason only my 9am input field works even though they are all the exact same maybe a new row&col to seperate hours??? I think i need to change to dynamically loading each hour
     // I think once things are loaded through js my display color function will work as well 
     // I am submitting as is and will work on dynamic loading of the page but have hit a wall in getting this version to function 
-    function displayHour(){
-     for (let i = 0; i < 8; i++) {
-       var newhour = $("<div>").addClass("input-group");
-       var hourHead = $("<h3>").text(i + 9);
-       var input = $("<input>").addClass("form-control").attr("id", (i + 9));
-       var mySaveBtn = $("<button>").addClass("btn btn-outline-secondary").attr("type", "button").attr("value", (i+9)).attr("id", "saveBtn").text("Save");
-       var hourSlot = newhour.append( hourHead + input + mySaveBtn); 
-       timecolor()
-       $("#test").append(hourSlot);
+    // function displayHour(){
+    //  for (let i = 0; i < 8; i++) {
+    //    var newhour = $("<div>").addClass("input-group");
+    //    var hourHead = $("<h3>").text(i + 9);
+    //    var input = $("<input>").addClass("form-control").attr("id", (i + 9));
+    //    var mySaveBtn = $("<button>").addClass("btn btn-outline-secondary").attr("type", "button").attr("value", (i+9)).attr("id", "saveBtn").text("Save");
+    //    var hourSlot = newhour.append( hourHead + input + mySaveBtn); 
+    //    timecolor()
+    //    $("#test").append(hourSlot);
 
 
-     }
-    };
+    //  }
+    // };
+
+    var currentdate = $("#currentdate").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
+    
+
     $(".btn").on("click", function (event) {
       event.preventDefault;
       var userinput = $("#" + this.value).val().trim();
@@ -159,7 +163,7 @@
       };
 
     }
-    displayHour()
+    // displayHour()
 
   </script>
 </body>
